@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="tarea">
+    <button   id="boton">Añadir</button>
+    <ul id="contenedor">
+    <template id="plantilla">
+        <li></li>
+    </template>
+    </ul>
+</body>
+<script>
+    document.getElementById("boton").addEventListener("click",function() {
+        var tarea=document.getElementById("tarea").value;
+        crearNuevaTarea(tarea);
+        tarea.value="";
+    });
+    var crearNuevaTarea=function(nuevaTarea){
+        var contenedor=document.getElementById("contenedor");
+        var plantilla=document.getElementById("plantilla");
+        var tarea=plantilla.content.querySelector('li');
+
+        var nuevoNodo= document.importNode(tarea,true);
+        nuevoNodo.textContent=nuevaTarea;
+        contenedor.appendChild(nuevoNodo);
+    }
+</script>
+</html>

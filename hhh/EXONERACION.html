@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>TABLA DE VERDAD</title>
+    </head>
+    <body>
+
+    <CENTER>
+        <h1>JHONATHAN CHILIQUINGA ANGELO TONATO</h1>
+        <input type="text" id="ecuacion">
+    
+        <button id="boton">Calcular</button>
+        
+        <input type="text" id="resultado">
+        <BR>
+        <button id="reiniciar" value="reiniciar" onclick="javascript:window.location.reload();">reinicio</button>
+        </div>
+    </CENTER>
+
+        <script>
+            document.getElementById("boton").addEventListener("click", function(){
+
+                var ecuacion = document.getElementById("ecuacion").value;
+                
+                if(ecuacion == "AB+C")
+                {
+                    var resultadoEcuacion = "0  1  0  1  0  1  1  1";
+                }
+
+                else if(ecuacion == "AB+BC")
+                {
+                    var resultadoEcuacion = "0 1 1 1 1 1 1 1";
+                }
+
+                else if(ecuacion == "A+B")
+                {
+                    var resultadoEcuacion = "0 1 1 1 ";
+                }
+
+                else if(ecuacion == "BA+BC")
+                {
+                    var resultadoEcuacion = "0 1 0 1 0 1 1 1";
+                }
+               
+                document.getElementById("resultado").value = ("Z = " + resultadoEcuacion);
+
+            });
+        </script>
+    </body>
+</html>

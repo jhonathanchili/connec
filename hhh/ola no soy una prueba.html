@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="numero">
+    <br>
+    <button id="boton">CLIC</button>
+    <br>
+    <input type="text" id="aleatorio">
+    <br>
+    <input type="number" id="pares">
+    <br>
+    <input type="number" id="impares">
+    <script>
+        document.getElementById("boton").addEventListener("click" , function(){
+            var numero = document.getElementById("numero").value;
+            var aleatorios = [];
+            var valorAleatorios = "";
+            var resultadoPar = 0;
+            var resultadosImpar=0;
+            if(numero < 5 || numero > 10){
+                alert("q estas de sapo");
+            }
+            else{
+                for(var i = 0; i<numero ; i++){
+                    aleatorios.push(Math.ceil(Math.random()*numero));
+                    valorAleatorios = valorAleatorios + "," + aleatorios[i];
+                }
+                document.getElementById("aleatorio").value = valorAleatorios;
+
+                for(var j = 0; j<aleatorios.length; j++){
+                    if(aleatorios[j] % 2 == 0){
+                        resultadoPar = resultadoPar + aleatorios[j];
+                    }
+                }
+                document.getElementById("pares").value = resultadoPar;
+                for(var k = 0; k<aleatorios.length ; k ++){
+                    if(aleatorios[k]%2!=0){
+                        resultadosImpar=resultadosImpar+aleatorios[k];
+                    }
+                }
+                document.getElementById("impares").value=resultadosImpar;
+            }
+        })
+        var pruebaImpares= function() {
+                var prueba=[2,3,5,4];
+                var suma =0;
+                console.log("Iniciando prueba");
+                console.log("Comprobando suma");
+                for(var l=0;l<prueba.length;l++){
+                    if(prueba[l]%2!=0){
+                        suma=suma+prueba[l];
+                    }
+                }
+                if(suma===8){
+                    console.log("Prueba superada");
+                }else{
+                    console.log("Prueba fallida");
+                }
+            }
+        ;
+    </script>
+    
+</body>
+</html>
